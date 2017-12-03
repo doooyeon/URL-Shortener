@@ -57,14 +57,12 @@ public class URLController {
 		// If it is not found in the database
 		if (url == null) {
 			// Adding an error message to model
-			System.out.println("url null");
 			model.addAttribute("errorMsg", "This URL does not exist.");
 			return "home";
 		} 
 		// If it is found in the database
 		else {
 			// Redirect to original URL
-			System.out.println("url not null");
 			String originalURL = url.getOriginalURL();
 			return "redirect:http://" + originalURL;
 		}
